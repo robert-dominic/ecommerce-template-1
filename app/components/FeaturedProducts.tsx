@@ -3,8 +3,6 @@ import Link from "next/link";
 import { supabase } from "@/app/lib/supabase";
 import type { Product } from "@/app/types";
 
-export const dynamic = "force-dynamic"; // Ensure this component is server-rendered on each request to fetch the latest featured products
-export const revalidate = 60; // Revalidate every 60 seconds
 export default async function FeaturedProducts() {
   // Fetch featured products from Supabase
   const { data: products } = await supabase
