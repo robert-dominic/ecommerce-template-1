@@ -1,12 +1,22 @@
 import ProductCard from "./ProductCard";
 import Link from "next/link";
-import productsData from "@/app/data/products.json";
+import { supabase } from "@/app/lib/supabase";
 import type { Product } from "@/app/types";
 
-const products = productsData as Product[];
-const featured = products.filter((p) => p.featured);
+export default async function FeaturedProducts() {
+  // Fetch featured products from Supabase
+  const { data: products } = await supabase
+    .from('products')
+    .select('*')
+    .eq('featured', true)
+    .limit(4);
 
-export default function FeaturedProducts() {
+  const featured = (products as Product[]) || [];
+
+  if (featured.length === 0) {
+    return null; // Don't show section if no featured products
+  }
+
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,8 +32,7 @@ export default function FeaturedProducts() {
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {featured.map((product) => (
             <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+          ))}        </div>
         <div className="text-center mt-12">
           <Link
             href="/shop"
