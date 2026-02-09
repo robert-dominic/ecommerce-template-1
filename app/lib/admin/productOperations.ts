@@ -1,3 +1,5 @@
+'use server'
+
 import { supabase } from '@/app/lib/supabase'
 import { revalidatePath } from 'next/cache'
 import type { Product, ProductFormData } from '@/app/types'
