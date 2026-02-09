@@ -1,7 +1,4 @@
-'use server'
-
 import { supabase } from '@/app/lib/supabase'
-import { revalidatePath } from 'next/cache'
 import type { Product, ProductFormData } from '@/app/types'
 
 export async function getAllProducts() {
@@ -57,12 +54,6 @@ export async function updateProduct(id: string, productData: {
     .select()
     .single()
 
-  if (!error) {
-    // Revalidate the paths that display products
-    revalidatePath('/')
-    revalidatePath('/shop')
-  }
-
   return { data: data as Product | null, error }
 }
 
@@ -71,12 +62,6 @@ export async function deleteProduct(id: string) {
     .from('products')
     .delete()
     .eq('id', id)
-
-  if (!error) {
-    // Revalidate the paths that display products
-    revalidatePath('/')
-    revalidatePath('/shop')
-  }
 
   return { error }
 }

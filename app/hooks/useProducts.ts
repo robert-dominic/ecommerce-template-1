@@ -24,6 +24,15 @@ export function useProducts() {
       if (imageUrl) {
         await deleteProductImage(imageUrl)
       }
+      // Revalidate the pages that display products
+      await fetch('/api/revalidate', {
+        method: 'POST',
+        body: JSON.stringify({ path: '/' }),
+      })
+      await fetch('/api/revalidate', {
+        method: 'POST',
+        body: JSON.stringify({ path: '/shop' }),
+      })
       await fetchProducts()
       return true
     }
