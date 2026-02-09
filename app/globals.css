@@ -15,10 +15,6 @@
   --font-logo: var(--font-montserrat);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background-color: var(--color-bg);
   color: var(--color-text);

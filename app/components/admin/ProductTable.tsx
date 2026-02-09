@@ -39,6 +39,7 @@ export default function ProductList({ products, loading, onDelete }: ProductTabl
                 src={product.image}
                 alt={product.name}
                 fill
+                priority
                 className="object-cover"
               />
             ) : (

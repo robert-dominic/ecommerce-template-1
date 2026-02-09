@@ -12,7 +12,7 @@ export default function OrderSummary({ subtotal, deliveryFee, total }: OrderSumm
   const { handleWhatsAppOrder } = useWhatsAppOrder();
 
   return (
-    <div className="sticky top-24 p-6 sm:p-8 rounded-xl bg-gray-100 border border-gray-200">
+    <div className="sticky top-24 py-6 px-3 sm:p-8 rounded-xl bg-gray-100 border border-gray-200">
       <h2 className="font-heading font-bold text-primary text-lg mb-4">
         Order total
       </h2>

@@ -12,10 +12,10 @@ export default function AdminHeader() {
       </div>
       <Link
         href="/admin/products/new"
-        className="bg-black text-white px-5 -py-2 md:px-6 md:py-3 rounded-md font-semibold hover:bg-primary/90 transition flex items-center gap-2 w-fit sm:px-6 sm:py-3"
+        className="bg-black text-white px-3 md:px-4 md:py-3 rounded-md font-semibold hover:bg-primary/90 transition flex items-center gap-2 w-fit sm:px-6 sm:py-2"
       >
-        <Plus size={20} />
-        <span className="hidden sm:inline">Add</span>
+        <Plus size={18} />
+        <span className="inline">Add</span>
       </Link>
     </div>
   )

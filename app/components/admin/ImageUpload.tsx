@@ -30,7 +30,8 @@ export default function ImageUpload({
             <Image 
               src={preview} 
               alt="Preview" 
-              fill 
+              width={400}
+              height={400}
               className="object-cover" 
             />
           </div>

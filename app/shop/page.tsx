@@ -2,7 +2,7 @@ import ProductCard from "@/app/components/ProductCard";
 import { supabase } from "@/app/lib/supabase";
 import type { Product } from "@/app/types";
 
-export const revalidate = 0; // Always fetch fresh data (or use a number for ISR)
+export const revalidate = 60; // Revalidate every 60 seconds
 
 export default async function ShopPage() {
   // Fetch products from Supabase

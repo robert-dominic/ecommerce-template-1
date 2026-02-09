@@ -60,9 +60,9 @@ export default function CartItem({ item, onUpdateQuantity, onRemove }: CartItemP
               className="p-2 text-primary hover:bg-gray-100 transition"
               aria-label="Decrease quantity"
             >
-              <Minus className="w-4 h-4" />
+              <Minus className="w-3 h-3" />
             </button>
-            <span className="w-10 text-center font-medium text-sm">
+            <span className="w-8 text-center font-medium text-sm">
               {quantity}
             </span>
             <button
@@ -71,7 +71,7 @@ export default function CartItem({ item, onUpdateQuantity, onRemove }: CartItemP
               className="p-2 text-primary hover:bg-gray-100 transition"
               aria-label="Increase quantity"
             >
-              <Plus className="w-4 h-4" />
+              <Plus className="w-3 h-3" />
             </button>
           </div>
         </div>
