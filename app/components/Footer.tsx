@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { NAV_LINKS, SOCIAL_LINKS } from "@/app/constants";
+import { NAV_LINKS, SOCIAL_LINKS } from "@/app/hooks/constants";
 import { FaInstagram, FaXTwitter, FaYoutube } from "react-icons/fa6";
 
 const SOCIAL_ICONS = {

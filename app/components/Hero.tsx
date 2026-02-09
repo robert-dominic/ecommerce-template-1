@@ -27,7 +27,7 @@ export default function Hero() {
               From The Screen <br className="hidden md:block" />
               <span className="text-gray-600">To The Streets</span>
             </h1>
-            <p className="text-base md:text-lg lg:text-xl text-gray-600 mb-8 max-w-lg mx-auto md:mx-0">
+            <p className="md:text-lg lg:text-xl text-gray-600 mb-8 max-w-lg md:mx-0">
               Premium anime streetwear for fans who actually live it. 
               Bold prints, clean cuts, real style.
             </p>

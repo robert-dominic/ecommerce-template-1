@@ -3,7 +3,7 @@
 import { X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import NavLink from "@/app/components/NavLink";
-import { NAV_LINKS } from "@/app/constants";
+import { NAV_LINKS } from "@/app/hooks/constants";
 
 interface MobileMenuProps {
   isOpen: boolean;

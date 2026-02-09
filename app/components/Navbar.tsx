@@ -6,7 +6,7 @@ import { Menu } from "lucide-react";
 import NavLink from "./NavLink";
 import MobileMenu from "./MobileMenu";
 import NavbarCartCount from "./NavbarCartCount";
-import { NAV_LINKS } from "@/app/constants";
+import { NAV_LINKS } from "@/app/hooks/constants";
 
 export default function Navbar() {
   const pathname = usePathname();

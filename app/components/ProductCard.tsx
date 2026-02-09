@@ -8,6 +8,9 @@ type ProductCardProps = {
 };
 
 export default function ProductCard({ product }: ProductCardProps) {
+
+const imageSrc = product.image || "/placeholder.png";
+
   return (
     <Link
       href={`/shop/${product.slug}`}
@@ -15,7 +18,7 @@ export default function ProductCard({ product }: ProductCardProps) {
     >
       <div className="aspect-[4/5] relative bg-gray-100 overflow-hidden">
         <Image
-          src={product.image}
+          src={imageSrc}
           alt={product.name}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
