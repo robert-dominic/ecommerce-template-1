@@ -15,6 +15,7 @@ const CART_STORAGE_KEY = "elite-threads-cart";
 type CartContextType = {
   items: CartItem[];
   itemCount: number;
+  loading: boolean;
   addItem: (product: Product, quantity?: number) => void;
   removeItem: (productId: string) => void;
   updateQuantity: (productId: string, quantity: number) => void;
@@ -46,11 +47,13 @@ function saveCartToStorage(items: CartItem[]) {
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
+  const [loading, setLoading] = useState(true);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setItems(loadCartFromStorage());
     setMounted(true);
+    setLoading(false);
   }, []);
 
   useEffect(() => {
@@ -94,6 +97,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const value: CartContextType = {
     items,
     itemCount,
+    loading,
     addItem,
     removeItem,
     updateQuantity,
