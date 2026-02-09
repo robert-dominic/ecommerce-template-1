@@ -39,6 +39,7 @@ export function AdminAuthProvider({ children }: { children: React.ReactNode }) {
   const checkUser = async () => {
     try {
       const { data: { user } } = await supabase.auth.getUser()
+      console.log('[DEBUG] checkUser -> user:', user)
       if (user) {
         setUser(user)
         await checkAdminStatus()
@@ -65,6 +66,8 @@ export function AdminAuthProvider({ children }: { children: React.ReactNode }) {
         .select('*')
         .eq('user_id', user.id)
         .single()
+
+      console.log('[DEBUG] checkAdminStatus -> user.id:', user.id, 'admin lookup:', data, 'error:', error)
 
       const adminStatus = !error && !!data
 
