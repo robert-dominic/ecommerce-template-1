@@ -3,8 +3,6 @@ import Link from "next/link";
 import { supabase } from "@/app/lib/supabase";
 import type { Product } from "@/app/types";
 
-export const revalidate = 0; // Disable caching for this component
-
 export default async function FeaturedProducts() {
   // Fetch featured products from Supabase
   const { data: products } = await supabase
